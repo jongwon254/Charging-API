@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from .models import ChargingPoint
 from .serializers import ChargingSerializer
 from rest_framework.decorators import api_view
