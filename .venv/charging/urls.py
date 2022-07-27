@@ -19,5 +19,6 @@ from charging import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('charging/', views.charging_list)
+    path('charging/', views.charging_list),
+    path('charging/<int:id>', views.charging_detail)
 ]
