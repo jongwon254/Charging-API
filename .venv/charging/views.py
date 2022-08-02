@@ -33,10 +33,10 @@ def charging_search(request):
 
     charging = ChargingPoint.objects.get(
         pk=id, 
-        operator=param_operator,
-        street=param_street,
-        house_number=param_house_number,
-        zip_code=param_zip_code,
+        #operator=param_operator,
+        #street=param_street,
+        #house_number=param_house_number,
+        #zip_code=param_zip_code,
         city=param_city,
         power=param_power,
         number_ports=param_ports,
