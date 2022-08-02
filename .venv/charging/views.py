@@ -19,6 +19,12 @@ def charging_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+@api_view()
+def charging_filter(request):
+    print('works')
+    # print(request.query_params)
+    # print(request.query_params['id'])
+
 @api_view(['GET', 'PUT', 'DELETE'])
 def charging_detail(request, id):
 
