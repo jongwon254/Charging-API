@@ -30,8 +30,8 @@ def charging_search(request):
     param_power = request.GET.get('power')
     param_ports = request.GET.get('ports')
 
-
-    charging = ChargingPoint.objects.filter(
+    if  not param_power:
+        charging = ChargingPoint.objects.filter(
         #pk=id, 
         #operator=param_operator,
         #street=param_street,
@@ -41,9 +41,21 @@ def charging_search(request):
         #power=param_power,
         #number_ports=param_ports,
         )
+    else:
+        charging = ChargingPoint.objects.filter(
+        #pk=id, 
+        #operator=param_operator,
+        #street=param_street,
+        #house_number=param_house_number,
+        #zip_code=param_zip_code,
+        city=param_city,
+        power=param_power,
+        #number_ports=param_ports,
+        )
 
     serializer = ChargingSerializer(charging, many=True)
     return Response(serializer.data)
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def charging_detail(request, id):
