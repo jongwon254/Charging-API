@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from charging import views
 
+# api endpoints
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('charging/', views.charging_list),
